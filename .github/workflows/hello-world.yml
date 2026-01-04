@@ -1,0 +1,9 @@
+name: My First Pipeline
+on: [push]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World! this is my first github action Pipeline"
