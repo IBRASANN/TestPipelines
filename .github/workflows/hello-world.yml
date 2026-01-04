@@ -15,3 +15,5 @@ jobs:
           pwd
           echo "the python version installed is:"
           python3 --version
+      - name: this will fail
+        run: exit 1
