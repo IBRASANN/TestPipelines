@@ -9,5 +9,12 @@ def test_add():
     assert add(5, 1) == 999
     print("All tests passed!")
 
+def create_report():
+    result = add(10, 20)
+    with open("build_report.txt", "w") as f:
+        f.write(f"Build successful. Result of 10 + 20 is {result}")
+    print("Report generated!")
+
 if __name__ == "__main__":
     test_add()
+    create_report()

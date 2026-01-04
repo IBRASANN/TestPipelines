@@ -26,3 +26,9 @@ jobs:
 
       - name: Run my Python test
         run: python app.py
+
+      - name: archive build report
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report-artifact #name of the zip file
+          path: build_report.txt #name of the file to save
