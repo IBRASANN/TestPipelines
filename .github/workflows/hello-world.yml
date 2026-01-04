@@ -5,8 +5,6 @@ jobs:
   inspect-environment:
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello, World! I am running on a github server"
       - name: Check System Info
         run: |
           echo "the operating system is:"
@@ -15,5 +13,16 @@ jobs:
           pwd
           echo "the python version installed is:"
           python3 --version
-      - name: this will fail
-        run: exit 1
+
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+
+      - name: set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Run my Python test
+        run: python app.py
